@@ -1,5 +1,6 @@
 .mealContainer {
-    width: 60%;
+    max-width: 55rem;
+    width: 90%;
     margin: 0 auto;
     background-color: white;
     border-radius: 10px;
