@@ -1,0 +1,29 @@
+.amount {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.btns {
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.btns button {
+    width: 80px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid brown;
+    background-color: brown;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btns .close {
+    color: brown;
+    background-color: white;
+}
