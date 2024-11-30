@@ -15,13 +15,7 @@ const App = () => {
   };
 
   const cartCtx = useContext(CartContext);
-  const cartContextValue = {
-    cartItem: [],
-    totalAmount: 0,
-    numberOfItem: 0,
-    addItem: (item) => {},
-    removeItem: (id) => {},
-  };
+
   return (
     <CartProvider>
       {isCartOpen && <Cart closeCart={closeCart} />}

@@ -4,6 +4,7 @@ import { IoCart } from "react-icons/io5";
 import CartContext from "../store/cartContext";
 const Header = ({ openCart }) => {
   const { count } = useContext(CartContext);
+
   return (
     <header>
       <div className="left">

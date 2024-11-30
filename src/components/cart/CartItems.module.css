@@ -1,0 +1,46 @@
+li {
+    width: 90%;
+    display: flex;
+    border-bottom: 1px solid rgb(206, 157, 157);
+    justify-content: space-between;
+    padding: 10px;
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.title {
+    font-weight: 800;
+    font-size: 22px;
+
+}
+
+.price {
+    color: maroon;
+    font-weight: 600;
+}
+
+.btns {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 30px;
+    height: 25px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+button:hover {
+    background-color: brown;
+    color: white;
+}

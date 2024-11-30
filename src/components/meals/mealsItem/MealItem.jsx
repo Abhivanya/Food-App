@@ -5,7 +5,9 @@ const MealItem = ({ item }) => {
   const { addItem } = useContext(CartContext);
   const handleAddItem = (e) => {
     e.preventDefault();
-    addItem(item);
+    const amount = e.target.quantity.value;
+
+    addItem({ ...item, amount: amount });
   };
   return (
     <li key={item.id} className={Style.item}>
@@ -18,7 +20,13 @@ const MealItem = ({ item }) => {
       <form onSubmit={handleAddItem}>
         <div className={Style.input}>
           <label htmlFor="amount">Amount</label>
-          <input type="number" min={1} max={5} defaultValue={1} />
+          <input
+            type="number"
+            min={1}
+            max={5}
+            defaultValue={1}
+            name="quantity"
+          />
         </div>
         <button className={Style.btn}>+ Add</button>
       </form>
