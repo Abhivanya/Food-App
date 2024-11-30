@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/layout/Header";
 import Banner from "./components/layout/Banner";
 import MealsSummary from "./components/meals/MealsSummary";
 import Meals from "./components/meals/Meals";
 import Cart from "./components/cart/Cart";
 const App = () => {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const openCart = () => {
+    setIsCartOpen(true);
+  };
+  const closeCart = () => {
+    setIsCartOpen(false);
+  };
   return (
     <div>
-      <Cart />
-      <Header />
+      {isCartOpen && <Cart closeCart={closeCart} />}
+      <Header openCart={openCart} />
       <Banner />
       <MealsSummary />
       <Meals />
