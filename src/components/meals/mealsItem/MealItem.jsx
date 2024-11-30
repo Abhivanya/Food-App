@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Style from "./MealItem.module.css";
+import CartContext from "../../store/cartContext";
 const MealItem = ({ item }) => {
+  const { addItem } = useContext(CartContext);
+  const handleAddItem = (e) => {
+    e.preventDefault();
+    addItem(item);
+  };
   return (
     <li key={item.id} className={Style.item}>
       <div>
@@ -9,7 +15,7 @@ const MealItem = ({ item }) => {
         <div className={Style.price}>${item.price}</div>
       </div>
 
-      <form>
+      <form onSubmit={handleAddItem}>
         <div className={Style.input}>
           <label htmlFor="amount">Amount</label>
           <input type="number" min={1} max={5} defaultValue={1} />

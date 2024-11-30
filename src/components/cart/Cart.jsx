@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import Style from "./Cart.module.css";
 import Modal from "../ui/Modal";
+import CartContext from "../store/cartContext";
 const Cart = ({ closeCart }) => {
   return (
     <Modal>

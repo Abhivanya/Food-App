@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Header from "./components/layout/Header";
 import Banner from "./components/layout/Banner";
 import MealsSummary from "./components/meals/MealsSummary";
 import Meals from "./components/meals/Meals";
 import Cart from "./components/cart/Cart";
+import CartContext, { CartProvider } from "./components/store/cartContext";
 const App = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const openCart = () => {
@@ -12,14 +13,23 @@ const App = () => {
   const closeCart = () => {
     setIsCartOpen(false);
   };
+
+  const cartCtx = useContext(CartContext);
+  const cartContextValue = {
+    cartItem: [],
+    totalAmount: 0,
+    numberOfItem: 0,
+    addItem: (item) => {},
+    removeItem: (id) => {},
+  };
   return (
-    <div>
+    <CartProvider>
       {isCartOpen && <Cart closeCart={closeCart} />}
       <Header openCart={openCart} />
       <Banner />
       <MealsSummary />
       <Meals />
-    </div>
+    </CartProvider>
   );
 };
 
